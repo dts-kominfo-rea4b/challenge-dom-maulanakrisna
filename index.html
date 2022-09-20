@@ -9,28 +9,36 @@
   </head>
   <body>
     <div id="app" class="container">
-      <!-- TODO: Buatlah sebuah header dengan id todo-title -->
-      <h1 id="todo_title" class="text-center">To-Do List</h1>
-      <!-- TODO: Buatlah sebuah subtitle dengan id todo-subtitle -->
-      <h2 id="todo-subtitle" class="text-center">~ Today I need to ~</h2>
+      <section>
+        <!-- TODO: Buatlah sebuah header dengan id todo-title -->
+        <h1 id="todo_title" class="display-2 text-center">My To Do List</h1>
+        <!-- TODO: Buatlah sebuah subtitle dengan id todo-subtitle -->
+        <h2 id="todo-subtitle" class="display-8 text-center">~ Today I need to ~</h2>
+      </section>
       <!-- Section: input -->
-      <div class="row">
-        <div class="col-8">
-          <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
-          <input type="text" class="form-control" name="" id="todo-input">
+      <section>
+        <div class="row">
+          <div class="col-8">
+            <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
+            <input type="text" value="" class="form-control" name="" id="todo-input">
+          </div>
+          <div class="col-4">
+            <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
+            <input type="button" class="btn btn-primary" value="Tambahkan" id="todo-submit">
+          </div>
         </div>
-        <div class="col-4">
-          <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
-          <input type="button" class="btn btn-primary" value="Tambahkan" id="todo-submit">
-        </div>
-      </div class="row">
+      </section>
       <!-- Section output -->
-      <div class="row">
-        <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
-        <ul id="todo-output list-group">
-          <!-- <li class="list-group-item">An example</li> -->
-        </ul>
-      </div>
+      <section>
+        <div class="row align-items-center mt-10">
+          <div class="col-md-6">
+            <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
+            <ul id="todo-output" class="list-group">
+              <li class="list-group-item mt-3">An example</li>
+            </ul>
+          </div>
+        </div>
+    </section>
     </div>
 
     <!-- ! Untuk tantangan ini, script jangan diubah ke external js yah ! -->
@@ -46,15 +54,26 @@
       function fnClickHandler(toDoItem) {
         let li = document.createElement('li');
         li.textContent = toDoItem;
-        li.className = 'list-group-item'
+        li.className = 'list-group-item';
         output.append(li);
       }
 
       // TODO: register event onclick / addEventListener untuk button
       // akan menjalankan fungsi fnClickHandler
-      
+      button.addEventListener('click', () => {
+        const toDoItem = input.value;
+        console.log(input.value);
+        fnClickHandler(toDoItem);
+      });
       // TODO: register event onkeypress / addEventListener untuk input
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter'){
+          const toDoItem = input.value;
+          console.log(input.value);
+          fnClickHandler(toDoItem);
+        }
+      });
     </script>
   </body>
 </html>
