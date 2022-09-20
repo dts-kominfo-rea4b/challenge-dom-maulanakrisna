@@ -62,7 +62,7 @@
       // akan menjalankan fungsi fnClickHandler
       button.addEventListener('click', () => {
         const toDoItem = input.value;
-        console.log(input.value);
+        // console.log(input.value);
         fnClickHandler(toDoItem);
       });
       // TODO: register event onkeypress / addEventListener untuk input
@@ -70,7 +70,14 @@
       input.addEventListener('keydown', (event) => {
         if (event.key === 'Enter'){
           const toDoItem = input.value;
-          console.log(input.value);
+          // console.log(input.value);
+          fnClickHandler(toDoItem);
+        }
+      });
+      input.addEventListener('onkeypress', (event) => {
+        if (event.key === 'Enter'){
+          const toDoItem = input.value;
+          // console.log(input.value);
           fnClickHandler(toDoItem);
         }
       });
