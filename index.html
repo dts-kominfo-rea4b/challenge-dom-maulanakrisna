@@ -67,14 +67,14 @@
       });
       // TODO: register event onkeypress / addEventListener untuk input
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
-      input.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter'){
-          const toDoItem = input.value;
-          // console.log(input.value);
-          fnClickHandler(toDoItem);
-        }
-      });
-      input.addEventListener('onkeypress', (event) => {
+      // input.addEventListener('keydown', (event) => {
+      //   if (event.key === 'Enter'){
+      //     const toDoItem = input.value;
+      //     // console.log(input.value);
+      //     fnClickHandler(toDoItem);
+      //   }
+      // });
+      input.addEventListener('keypress', (event) => {
         if (event.key === 'Enter'){
           const toDoItem = input.value;
           // console.log(input.value);
