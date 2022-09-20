@@ -8,25 +8,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
   <body>
-    <div id="app">
+    <div id="app" class="container">
       <!-- TODO: Buatlah sebuah header dengan id todo-title -->
-      <h1 id="todo_title"></h1>
+      <h1 id="todo_title" class="text-center">To-Do List</h1>
       <!-- TODO: Buatlah sebuah subtitle dengan id todo-subtitle -->
-      <h2 id="todo-subtitle"></h2>
+      <h2 id="todo-subtitle" class="text-center">~ Today I need to ~</h2>
       <!-- Section: input -->
-      <section>
-        <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
-        <input type="text" name="" id="todo-input">
-        <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
-        <input type="submit" value="Tambahkan" id="todo-submit">
-      </section>
+      <div class="row">
+        <div class="col-8">
+          <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
+          <input type="text" class="form-control" name="" id="todo-input">
+        </div>
+        <div class="col-4">
+          <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
+          <input type="button" class="btn btn-primary" value="Tambahkan" id="todo-submit">
+        </div>
+      </div class="row">
       <!-- Section output -->
-      <section>
+      <div class="row">
         <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
-        <ul id="todo-output">
-
+        <ul id="todo-output list-group">
+          <li class="list-group-item">An example</li>
         </ul>
-      </section>
+      </div>
     </div>
 
     <!-- ! Untuk tantangan ini, script jangan diubah ke external js yah ! -->
