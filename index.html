@@ -28,7 +28,7 @@
       <div class="row">
         <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
         <ul id="todo-output list-group">
-          <li class="list-group-item">An example</li>
+          <!-- <li class="list-group-item">An example</li> -->
         </ul>
       </div>
     </div>
@@ -36,14 +36,19 @@
     <!-- ! Untuk tantangan ini, script jangan diubah ke external js yah ! -->
     <script>
       // TODO: Deklarasi variable sesuai dengan kebutuhan di sini
-      let button;
-      let input;
-      let output;
+      let button = document.querySelector('#todo-submit');
+      let input = document.querySelector('#todo-input');
+      let output = document.querySelector('#todo-output');
 
       // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
       // Fungsi yang digunakan untuk menambahkan tulisan
       // Jangan ubah cara deklarasi fungsinya, cukup isi saja
-      function fnClickHandler(toDoItem) {}
+      function fnClickHandler(toDoItem) {
+        let li = document.createElement('li');
+        li.textContent = toDoItem;
+        li.className = 'list-group-item'
+        output.append(li);
+      }
 
       // TODO: register event onclick / addEventListener untuk button
       // akan menjalankan fungsi fnClickHandler
